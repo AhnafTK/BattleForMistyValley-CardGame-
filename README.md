@@ -15,12 +15,15 @@ A random number is then generated, which gets returned into the makeCard() funct
 The player and the opponents decks are populated in this manner. The sum of the cards is then calculated and the winner is declared. This program is run on the java Swing components, using JFrames and JPanels to create the main menu, the card table and the winner screen.
 
 ## Screenshots of the program running
+### Main menu screen
+![image](https://user-images.githubusercontent.com/91911908/165984867-9596706a-fc41-4072-b43c-2be1480e8bbc.png)
 ### Card table scene
-![image](https://user-images.githubusercontent.com/91911908/165338427-3c0e096b-9ad7-42eb-befb-535a80fba719.png)
+![image](https://user-images.githubusercontent.com/91911908/165984926-d1b6eacb-3cdb-4806-8009-b169120eca36.png)
 ### Results scene
-![image](https://user-images.githubusercontent.com/91911908/165338503-ff07db78-c002-4077-a82a-7faa00ce1d51.png)
+![image](https://user-images.githubusercontent.com/91911908/165984969-08ad638a-0809-41f5-bba5-ca8cea07622e.png)
+
 
 ## To-Do
 * Finish the remaining card art.
-* Font size and color adjustments.
-* Minor UI tweaks.
+* --Font size and color adjustments.--
+* --Minor UI tweaks.--
