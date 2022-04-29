@@ -2,38 +2,24 @@ import javax.swing.JLabel;
 
 public class Player {
 	
-//	int card1;
-	//int card2;
-	//int card3;
-	
-	JLabel [] cardDeck = {null,null,null};
-	int[] cardNums = {0,0,0};
+	JLabel [] cardDeck = {null,null,null}; // Card deck
+	int[] cardNums = {0,0,0}; // The numbers associated with the cards.
 
+	// Populates the players decks.
 	public void populatePlayer() {
 		Cards cards = new Cards();
-		//cards.displayCards();
 		for (int i = 0; i<cardDeck.length; i++) {
 			
 			cardDeck[i]=cards.makeCard();
 			cardNums[i]=cards.returnCardNum();
-			//return cardDeck;
 		}
 	}
 	
-
+	// Calculates the sum of the numbers and returns it.
 	public int calculateSum() {
 		int sum = ((cardNums[0]+cardNums[1]+cardNums[2]));
 		return sum;
 	}
 	
-	
-	
-	
-	
-	
-
-	
-	
-
 
 }

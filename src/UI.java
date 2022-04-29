@@ -16,20 +16,17 @@ import javax.swing.SwingUtilities;
 
 public class UI implements ActionListener {
 
-	JFrame core;
-	JFrame gameWindow;
+	JFrame core; // The core JFrame
+	JFrame gameWindow; // Frame for the game window. 
+	JFrame scoreWindow; // Frame for the score window.
 
-	JButton startButton = new JButton();
+	JButton startButton; // Button to start the game.
+	JButton playAgainButton; // Button to play again.
+	JButton exitButton; // Button to exit.
 
-	JButton playAgainButton;
-	JButton exitButton;
+	Timer timer = new Timer(); // Instance of timer class. 
 
-	
-	JFrame scoreWindow;
-
-	Timer timer = new Timer();
-	boolean run = true;
-
+	// Starts the main menu of the program.
 	public void startCore() {
 
 		core = new JFrame();
@@ -39,7 +36,7 @@ public class UI implements ActionListener {
 		ImageIcon titleScreen = new ImageIcon("titlescreen.png");
 		background.setIcon(titleScreen);
 		
-
+		startButton = new JButton();
 		startButton.setBounds(525, 460, 150, 50);
 		startButton.setText("Start");
 		startButton.addActionListener(this);
@@ -54,6 +51,7 @@ public class UI implements ActionListener {
 
 	}
 
+	// The game window. 
 	public JFrame makeGameWindow() {
 		
 		gameWindow = new JFrame();
@@ -64,27 +62,39 @@ public class UI implements ActionListener {
 		gameWindow.setResizable(false);
 		gameWindow.setLayout(null);
 
+		JPanel player1NamePanel = new JPanel();
+		JPanel player2NamePanel = new JPanel();
+
 		JLabel player1Name = new JLabel();
 		JLabel player2Name = new JLabel();
 
 		player1Name.setText("Player 1: You"); 
-		//player1Name.setFont(null);
-		player1Name.setBounds(550, 530, 150, 150);
 		player1Name.setVisible(true);
 
 		player2Name.setText("Player 2: Opponent");
-		player2Name.setBounds(550, -30, 150, 150);
 		player2Name.setVisible(true);
 		
 		player1Name.setFont(new Font("Calibri Regular",Font.BOLD,20));
 		player2Name.setFont(new Font("Calibri Regular",Font.BOLD,20));
+		
+		player1NamePanel.add(player1Name);
+		player1NamePanel.setBackground(Color.YELLOW);
+		player2NamePanel.add(player2Name);
+		player2NamePanel.setBackground(Color.YELLOW);
+		
+		player1NamePanel.setVisible(true);
+		player2NamePanel.setVisible(true);
+		
+		player1NamePanel.setBounds(505, 630, 200, 50);
+		player2NamePanel.setBounds(505, 20, 200,50);
 
-		gameWindow.add(player1Name);
-		gameWindow.add(player2Name);
+		gameWindow.add(player1NamePanel);
+		gameWindow.add(player2NamePanel);
 
 		return gameWindow;
 	}
 
+	// Makes the game window and starts the game by adding the players and cards.
 	public void playGame() {
 
 		gameWindow = makeGameWindow();
@@ -114,13 +124,13 @@ public class UI implements ActionListener {
 		p2c2 = player2.cardDeck[1];
 		p2c3 = player2.cardDeck[2];
 
-		p1c1.setBounds(325, 360, 169, 230);
-		p1c2.setBounds(525, 360, 169, 230);
-		p1c3.setBounds(725, 360, 169, 230);
+		p1c1.setBounds(325, 380, 169, 230);
+		p1c2.setBounds(525, 380, 169, 230);
+		p1c3.setBounds(725, 380, 169, 230);
 
-		p2c1.setBounds(325, 60, 169, 230);
-		p2c2.setBounds(525, 60, 169, 230);
-		p2c3.setBounds(725, 60, 169, 230);
+		p2c1.setBounds(325, 90, 169, 230);
+		p2c2.setBounds(525, 90, 169, 230);
+		p2c3.setBounds(725, 90, 169, 230);
 
 		gameWindow.add(p1c1);
 		gameWindow.add(p1c2);
@@ -136,7 +146,7 @@ public class UI implements ActionListener {
 
 	}
 
-
+	// Makes the scoreboard where the score and winner is displayed.
 	public JFrame makescoreBoard(Player player1, Player player2) {
 		
 		JLabel table = drawBoard();
@@ -169,11 +179,11 @@ public class UI implements ActionListener {
 		scoreWindow.add(winnerScreen);
 		scoreWindow.add(table);
 		
-
 		return scoreWindow;
 
 	}
 
+	// Draws the background/table on which the cards are placed.
 	public JLabel drawBoard() {
 		
 		ImageIcon tableImage = new ImageIcon("tablebackground.png");
@@ -185,8 +195,8 @@ public class UI implements ActionListener {
 
 	}
 	
-public JPanel decideWinner(Player player1, Player player2) {
-		
+	// Decides who the winner is and returns the approriate text.
+	public JPanel decideWinner(Player player1, Player player2) {
 		
 		JPanel summary = new JPanel();
 		JLabel winnerText = new JLabel();
@@ -215,50 +225,46 @@ public JPanel decideWinner(Player player1, Player player2) {
 		
 		summary.add(winnerText);
 		
-	
 		return summary;
 
 	} 
 	
+	// Timer. waits 3.5 secs after displays the cards before closing.
 	public void timer(Player player1, Player player2) {
 		
 		TimerTask wait = new TimerTask() {
 
 			@Override
 			public void run() {
-				
 				gameWindow.dispose();
 				makescoreBoard(player1, player2);
 			}
-			
 		};
 		timer.schedule(wait, 3500);
 	}
 	
+	// For playing the game again.
 	public void playAgain() {
 		gameWindow.dispose();
 		playGame();
 	}
 
+	// Actions of the startbutton, playbutton and exitbutton.
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == startButton) {
 			core.dispose();
 			playGame();
-
 		}
 
 		else if (e.getSource() == playAgainButton) {
 			scoreWindow.dispose();
 			playAgain();
-			//SwingUtilities.updateComponentTreeUI(gameWindow);
 		} 
 		else if (e.getSource() == exitButton) {
 			scoreWindow.dispose();
 			System.exit(0);
 			
 		}
-
 	}
-
 }
