@@ -37,7 +37,7 @@ public class UI implements ActionListener {
 		background.setIcon(titleScreen);
 		
 		startButton = new JButton();
-		startButton.setBounds(525, 460, 150, 50);
+		startButton.setBounds(525, 550, 150, 50);
 		startButton.setText("Start");
 		startButton.addActionListener(this);
 
@@ -78,15 +78,13 @@ public class UI implements ActionListener {
 		player2Name.setFont(new Font("Calibri Regular",Font.BOLD,20));
 		
 		player1NamePanel.add(player1Name);
-		player1NamePanel.setBackground(Color.YELLOW);
 		player2NamePanel.add(player2Name);
-		player2NamePanel.setBackground(Color.YELLOW);
-		
+	
 		player1NamePanel.setVisible(true);
 		player2NamePanel.setVisible(true);
 		
-		player1NamePanel.setBounds(505, 630, 200, 50);
-		player2NamePanel.setBounds(505, 20, 200,50);
+		player1NamePanel.setBounds(505, 630, 200, 45);
+		player2NamePanel.setBounds(505, 20, 200,45);
 
 		gameWindow.add(player1NamePanel);
 		gameWindow.add(player2NamePanel);
@@ -161,13 +159,13 @@ public class UI implements ActionListener {
 		scoreWindow.setLayout(null);
 
 		playAgainButton = new JButton();
-		playAgainButton.setBounds(375, 560, 150, 50);
+		playAgainButton.setBounds(375, 500, 150, 50);
 		playAgainButton.setText("Play Again");
 		playAgainButton.addActionListener(this);
 		playAgainButton.setVisible(true);
 		
 		exitButton = new JButton();
-		exitButton.setBounds(675, 560, 150, 50);
+		exitButton.setBounds(675, 500, 150, 50);
 		exitButton.setText("Exit");
 		exitButton.addActionListener(this);
 		exitButton.setVisible(true);
@@ -221,7 +219,7 @@ public class UI implements ActionListener {
 		winnerText.setVisible(true);
 		
 		summary.setVisible(true);
-		summary.setBounds(250, 200, 700, 200);
+		summary.setBounds(250, 200, 700, 45);
 		
 		summary.add(winnerText);
 		

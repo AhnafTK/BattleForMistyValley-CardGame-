@@ -38,6 +38,7 @@ public class Cards {
 
 	// Generates a random number. Used to pick cards for the deck. 
 	public static int randomCardNumGenerator(int min, int max) {
+		
 		int randInt = (int)(Math.random() * (max-min)+1);
 		return randInt;
 	}
