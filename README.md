@@ -1,6 +1,6 @@
 # BattleForMistyValley-CardGame-
 * By: Ahnaf Kamal
-* Project time: Started in April 2022, [UNFINISHED].
+* Project time: April 2022, ~1 month
 
 ## What is Battle for Misty Valley?
 This program is a basic card game. The player and the opponent both get 3 cards, numbering betweeen 1-10. The player with the greater sum of the numbers on the card wins.
