@@ -18,12 +18,8 @@ The player and the opponents decks are populated in this manner. The sum of the 
 ### Main menu screen
 ![image](https://user-images.githubusercontent.com/91911908/165984867-9596706a-fc41-4072-b43c-2be1480e8bbc.png)
 ### Card table scene
-![image](https://user-images.githubusercontent.com/91911908/165984926-d1b6eacb-3cdb-4806-8009-b169120eca36.png)
+![image](https://user-images.githubusercontent.com/91911908/166124209-657c89f0-e212-4142-bbbc-da5e5f5b102d.png)
 ### Results scene
-![image](https://user-images.githubusercontent.com/91911908/165984969-08ad638a-0809-41f5-bba5-ca8cea07622e.png)
+![image](https://user-images.githubusercontent.com/91911908/166124216-fe08e7b3-5c35-498e-bae5-6958e7940430.png)
 
 
-## To-Do
-* Finish the remaining card art.
-* --Font size and color adjustments.--
-* --Minor UI tweaks.--
